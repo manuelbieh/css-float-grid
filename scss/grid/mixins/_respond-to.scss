@@ -1,0 +1,28 @@
+
+@mixin respond-to($media) {
+
+  @if $media == xsmall or $media == phone {
+    @media #{$mq-xsmall} { @content; }
+  }
+
+  @else if $media == small or $media == phone-landscape {
+    @media #{$mq-small} { @content; }
+  }
+
+  @else if $media == medium or $media == tablet-portrait {
+    @media #{$mq-medium} { @content; }
+  }
+
+  @else if $media == large or $media == tablet-landscape {
+    @media #{$mq-large} { @content; }
+  }
+
+  @else if $media == xlarge or $media == desktop {
+    @media #{$mq-xlarge} { @content; }
+  }
+
+  @else if $media == xxlarge or $media == large-desktop {
+    @media #{$mq-xxlarge} { @content; }
+  }
+
+}

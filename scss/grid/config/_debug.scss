@@ -1,0 +1,24 @@
+@if($use-debug == true) {
+
+    // for easier debugging
+    body:after {
+        display: none;
+    }
+    @each $size, $query in $media-queries {
+        @media #{$query} {
+            body:after {
+                content: "#{$size} (#{$query})";
+            }
+        }
+    }
+
+    // DEBUGGING:
+    .#{$grid-prefix}grid {
+        background: rgba(0,0,0,0.1);
+    }
+
+    .#{$grid-prefix}grid .col {
+        background: rgba(0,0,0,0.1);
+    }
+
+}

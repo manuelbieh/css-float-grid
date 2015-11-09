@@ -1,0 +1,44 @@
+$bp-xsmall:   0px !default;
+$bp-small:    480px !default;
+$bp-medium:   768px !default;
+$bp-large:    1024px !default;
+$bp-xlarge:   1280px !default;
+$bp-xxlarge:  1440px !default;
+
+$mq-xsmall:   "all and (min-width: #{$bp-xsmall})" !default;
+$mq-small:    "all and (min-width: #{$bp-small})" !default;
+$mq-medium:   "all and (min-width: #{$bp-medium})" !default;
+$mq-large:    "all and (min-width: #{$bp-large})" !default;
+$mq-xlarge:   "all and (min-width: #{$bp-xlarge})" !default;
+$mq-xxlarge:  "all and (min-width: #{$bp-xxlarge})" !default;
+
+$media-queries: (
+    xsmall:   $mq-xsmall,
+    small:    $mq-small,
+    medium:   $mq-medium,
+    large:    $mq-large,
+    xlarge:   $mq-xlarge,
+    xxlarge:  $mq-xxlarge
+);
+
+$fixed-widths: (
+    xsmall:   320px,
+    small:    $bp-small,
+    medium:   $bp-medium,
+    large:    $bp-large,
+    xlarge:   $bp-xlarge,
+    xxlarge:  $bp-xxlarge
+);
+
+$grid-prefix:   '' !default;
+
+$gutter-size:   16px !default;
+$col-padding-h: 16px !default;
+$col-padding-v: 16px !default;
+$row-margin:    16px !default;
+
+$max-width:     $bp-xxlarge !default;
+
+$create-seamless: true !default;
+$use-normalize: true !default;
+$use-debug: true !default;

@@ -1,0 +1,28 @@
+$mq-xsmall: "all and (min-width: 0px)";
+$mq-small: "all and (min-width: 480px)";
+$mq-medium: "all and (min-width: 768px)";
+$mq-medium-large: "all and (min-width: 768px)"; // special case which targets mostly tablets
+$mq-large: "all and (min-width: 1024px)";
+$mq-xlarge: "all and (min-width: 1280px)";
+$mq-xxlarge: "all and (min-width: 1440px)";
+
+$mq-medium-up: "all and (min-width: 768px)";
+$mq-large-down: "all and (max-width: 1279px)";
+
+$mediaqueries: (
+    xsmall: $mq-xsmall,
+    small: $mq-small,
+    medium: $mq-medium,
+    large: $mq-large,
+    xlarge: $mq-xlarge,
+    xxlarge: $mq-xxlarge
+);
+
+@each $size, $query in $mediaqueries {
+    @media #{$query} {
+        body:after {
+            display: none;
+            content: "#{$size} (#{$query})";
+        }
+    }
+}

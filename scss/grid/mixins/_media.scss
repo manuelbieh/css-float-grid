@@ -1,0 +1,9 @@
+@mixin media($media) {
+
+    $mq: map-get($media-queries, $media);
+
+    @media #{$mq} {
+        @content;
+    }
+
+}

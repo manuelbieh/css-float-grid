@@ -1,0 +1,26 @@
+{
+  "name": "wiremore-css-grid",
+  "version": "v0.5.0.alpha1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "scss --watch scss:css",
+    "compile": "scss --style compressed scss/grid.scss css/grid.min.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manuelbieh/css-float-grid.git"
+  },
+  "keywords": [
+    "CSS",
+    "CSSGrid",
+    "Gridsystem",
+    "FloatGrid"
+  ],
+  "author": "Manuel Bieh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/manuelbieh/wiremore-css-grid/issues"
+  },
+  "homepage": "https://github.com/manuelbieh/wiremore-css-grid#readme"
+}

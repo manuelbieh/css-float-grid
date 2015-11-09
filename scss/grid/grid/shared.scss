@@ -1,0 +1,30 @@
+.#{$grid-prefix}grid {
+
+    .sheet {
+
+        &.col,
+        &.row {
+
+            // @include shadow;
+            background: white;
+            margin-bottom: $row-margin;
+            padding: $col-padding-v $col-padding-h;
+
+            > :first-child {
+                margin-top: 0;
+            }
+
+            > :last-child {
+                margin-bottom: 0;
+            }
+
+        }
+
+    }
+
+    // .row .col:not(.sheet) .row {
+    //     margin-left: -($col-padding-h)*1.5;
+    //     margin-right: -($col-padding-h)*1.5;
+    // }
+
+}

@@ -1,0 +1,158 @@
+.#{$grid-prefix}grid {
+
+	margin: auto;
+    max-width: $max-width;
+	position: relative;
+	width: 100%;
+
+	&:after {
+		@include clearfix;
+	}
+
+	.row {
+
+		clear: both;
+		margin-bottom: $row-margin - $col-padding-v;
+
+		&:after {
+			@include clearfix;
+		}
+
+		//  reset top-margin in nested rows
+		.row {
+			margin-top: -#{$col-padding-v};
+		}
+
+	}
+
+	.col {
+
+		box-sizing: border-box;
+		float: left;
+		margin: 0 $gutter-size/2;
+
+		max-width: 100%;
+		min-height: 1px;
+		overflow: hidden;
+        position: relative;
+
+        padding: $col-padding-v $col-padding-h;
+
+        & .col.no-pad,
+        &.no-pad,
+        &.pad-0 {
+            padding: 0;
+        }
+
+        &.pad-1 {
+            padding: 1px;
+        }
+
+        &.pad-2 {
+            padding: 2px;
+        }
+
+        &.pad-4 {
+            padding: 4px;
+        }
+
+        &.pad-8 {
+            padding: 8px;
+        }
+
+		.row {
+			// reset padding of the surrounding column
+			margin-left: -($col-padding-h);
+			margin-right: -($col-padding-h);
+		}
+
+		.col {
+			padding: $col-padding-v $col-padding-h - ($gutter-size/2);
+		}
+
+		&.centered {
+			float: none;
+            margin-left: auto;
+			margin-right: auto;
+		}
+
+		@if($create-seamless == true) {
+
+			&.seamless {
+				margin: 0;
+			}
+
+			&.seamless > .row {
+				margin-left:  -($col-padding-h/2);
+				margin-right: -($col-padding-h/2);
+			}
+
+		}
+
+	}
+
+	@each $size, $query in $media-queries {
+
+	    @media #{$query} {
+
+			&.fixed {
+				max-width: map-get($fixed-widths, #{$size});
+			}
+
+			@for $cols from 1 through 12 {
+
+                .#{$size}-pull-#{$cols} {
+                    left: calc(-100%/(12/#{$cols}));
+                }
+
+                .#{$size}-push-#{$cols} {
+                    left: calc(100%/(12/#{$cols}));
+                }
+
+                .#{$size}-offset-#{$cols} {
+                	margin-left: calc(100%/(12/#{$cols}) - #{$gutter-size});
+                }
+
+				.#{$size}-#{$cols} {
+
+					width: calc(100%/(12/#{$cols}) - #{$gutter-size});
+
+					@if($create-seamless == true) {
+
+						&.seamless {
+							width: calc(100%/(12/#{$cols}));
+						}
+
+					}
+
+				}
+
+			}
+
+			.#{$size}-0,
+			.#{$size}-invisible,
+			.#{$size}-hidden {
+				display: none;
+			}
+
+			.#{$size}-visible {
+				display: initial;
+			}
+
+	        .#{$size}-fl-left {
+	        	float: left;
+	        }
+
+	        .#{$size}-fl-right {
+	        	float: right;
+	        }
+
+	        .#{$size}-fl-none {
+	        	float: none;
+	        }
+
+	    }
+
+	}
+
+}
