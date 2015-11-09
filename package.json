@@ -1,11 +1,12 @@
 {
   "name": "wiremore-css-grid",
-  "version": "v0.5.0.alpha1",
+  "version": "v0.5.0-alpha1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "watch": "scss --watch scss:css",
-    "compile": "scss --style compressed scss/grid.scss css/grid.min.css"
+    "compile": "scss scss/grid.scss css/grid.css",
+    "minify": "scss --style compressed scss/grid.scss css/grid.min.css"
   },
   "repository": {
     "type": "git",
