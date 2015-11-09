@@ -1,25 +1,21 @@
 .#{$grid-prefix}grid {
 
-	margin: auto;
-    max-width: $max-width;
-	position: relative;
-	width: 100%;
+	@include clearfix;
 
-	&:after {
-		@include clearfix;
-	}
+    margin: auto;
+    max-width: $max-width;
+    position: relative;
+    width: 100%;
 
 	.row {
 
-		clear: both;
-		margin-bottom: $row-margin - $col-padding-v;
+		@include clearfix;
 
-		&:after {
-			@include clearfix;
-		}
+        clear: both;
+        margin-bottom: $row-margin - $col-padding-v;
 
-		//  reset top-margin in nested rows
-		.row {
+        .row {
+    		// reset top-margin in nested rows
 			margin-top: -#{$col-padding-v};
 		}
 

@@ -239,14 +239,14 @@ body:after {
   max-width: 1440px;
   position: relative;
   width: 100%; }
-  .grid:after:after {
+  .grid:after {
     content: "";
     display: table;
     clear: both; }
   .grid .row {
     clear: both;
     margin-bottom: 0px; }
-    .grid .row:after:after {
+    .grid .row:after {
       content: "";
       display: table;
       clear: both; }
